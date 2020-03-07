@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RemindMe</title>
+    <link rel="icon" href="{{ url_for('static', filename='remind.ico') }}">
+</head>
+<body>
+    <form method="post" enctype="multipart/form-data">
+        {{ form1.csrf_token }}
+        <!--<input type="datetime-local" name="date" />
+        <input type="submit" />-->
+        <table align="center">
+            <tr><td>{{ form1.remind_time.label }}</td>
+                <td>{{ form1.remind_time(style="background-color:transparent") }}</td></tr>
+            <tr><td><small>格式为</small></td><td><small>20xx-xx-xx xx:xx:xx</small></td></tr>
+            <tr><td>{{ form1.content.label }}</td>
+                <td>{{ form1.content(style="width:300px;height:75px;background-color:transparent") }}</td></tr>
+            <tr><td>{{ form1.email.label }}</td><td>{{ form1.email(style="background-color:transparent") }}</td></tr>
+            <tr><td></td><td>{{ form1.submit }}</td></tr>
+        </table>
+    </form>
+</body>
+</html>
